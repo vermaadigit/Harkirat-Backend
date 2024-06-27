@@ -33,8 +33,29 @@ setTimeout(findSum100, 5000)
 
 //Async Function ---> fs.readFile()  (It is for reading file)
 
+// const fs = require('fs')
+
+// fs.readFile('Day2.txt', "utf-8", function(err, data){
+//     console.log(data)
+// })
+
+//Promises ---> It is for handling async function
+
 const fs = require('fs')
 
-fs.readFile('Day2.txt', "utf-8", function(err, data){
+//our own asynchronous function
+
+function adiReadFile() {
+    return new Promise(function(resolve) {
+        fs.readFile('Day2.txt', "utf-8", function(err, data){
+            resolve(data)
+        })
+    })
+}
+
+//Callback function to call
+function onDone(data) {
     console.log(data)
-})
+}
+
+adiReadFile().then(onDone)
