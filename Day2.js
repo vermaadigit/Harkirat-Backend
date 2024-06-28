@@ -41,6 +41,7 @@ setTimeout(findSum100, 5000)
 
 //Promises ---> It is for handling async function
 
+/*
 const fs = require('fs')
 
 //our own asynchronous function
@@ -59,3 +60,23 @@ function onDone(data) {
 }
 
 adiReadFile().then(onDone)
+*/
+
+// var d = new Date();
+// console.log(d.getDate())
+
+
+// ---> Pending, Resolve, Rejected 
+var d = new Promise(function(resolve) {
+    setTimeout(function() {
+        resolve("Foo");
+    }, 3000)
+});
+
+function Callback() {
+    console.log(d);
+}
+
+console.log(d);
+
+d.then(Callback);
