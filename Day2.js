@@ -65,7 +65,7 @@ adiReadFile().then(onDone)
 // var d = new Date();
 // console.log(d.getDate())
 
-
+/*
 // ---> Pending, Resolve, Rejected 
 var d = new Promise(function(resolve) {
     setTimeout(function() {
@@ -80,3 +80,18 @@ function Callback() {
 console.log(d);
 
 d.then(Callback);
+*/
+
+//Promise
+
+function adiAsyncFunction() {
+    let p = new Promise(function(resolve) {
+        resolve("Hii, there !!")
+    })
+    return p
+}
+
+const value = adiAsyncFunction()
+value.then(function(data){
+    console.log(data)
+})
