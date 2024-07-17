@@ -84,6 +84,7 @@ d.then(Callback);
 
 //Promise
 
+/*
 function adiAsyncFunction() {
     let p = new Promise(function(resolve) {
         resolve("Hii, there !!")
@@ -95,3 +96,31 @@ const value = adiAsyncFunction()
 value.then(function(data){
     console.log(data)
 })
+*/
+
+//Async Await Function 
+
+function adiAsyncFunction() {
+    let p = new Promise(function(resolve) {
+        setTimeout(function(){
+            resolve("Hiii There !!")
+        }, 1000)
+    });
+    return p;
+}
+
+async function main() {
+    // adiAsyncFunction().then(function(value){
+    //     console.log(value);
+    // });
+
+    //No callBacks, no .then() syntax
+
+    let value = await adiAsyncFunction()
+    console.log("Hello !!")
+    console.log(value)
+} 
+
+console.log("Start")    //It will print first
+
+main();
